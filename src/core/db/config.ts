@@ -15,4 +15,5 @@ export default defineConfig({
   dbCredentials: {
     url: envConfigs.database_url ?? '',
   },
+  schemaFilter: ['public'],
 });

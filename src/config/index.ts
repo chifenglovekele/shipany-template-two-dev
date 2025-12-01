@@ -8,8 +8,10 @@ if (
 ) {
   try {
     const dotenv = require('dotenv');
-    dotenv.config({ path: '.env.development' });
-    dotenv.config({ path: '.env', override: false });
+    // Load in reverse priority order (later files override earlier ones)
+    dotenv.config({ path: '.env' }); // Base defaults
+    dotenv.config({ path: '.env.development', override: false }); // Development overrides
+    dotenv.config({ path: '.env.local', override: false }); // Local overrides (highest priority)
   } catch (e) {
     // Silently fail - dotenv might not be available in some environments
   }
