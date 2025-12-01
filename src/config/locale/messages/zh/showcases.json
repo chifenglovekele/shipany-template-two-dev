@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "title": "案例展示",
+    "description": "用 ShipAny 打造的精彩项目"
+  },
+  "showcases": {
+    "id": "showcase",
+    "sr_only_title": "案例展示",
+    "title": "用 ShipAny 构建的 AI SaaS 创业项目",
+    "description": "易用且极速上线。",
+    "items": [
+      {
+        "title": "ThinkAny",
+        "description": "AI 搜索引擎",
+        "url": "https://thinkany.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/7.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "HeyBeauty",
+        "description": "AI 虚拟试妆",
+        "url": "https://heybeauty.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/5.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "AI Wallpaper",
+        "description": "AI 壁纸生成器",
+        "url": "https://aiwallpaper.shop",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/1.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "AI Cover",
+        "description": "AI 封面生成器",
+        "url": "https://aicover.design",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/2.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "GPTs Works",
+        "description": "GPTs 导航",
+        "url": "https://gpts.works",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/3.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "Melodisco",
+        "description": "AI 音乐播放器",
+        "url": "https://melodis.co",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/4.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "Pagen",
+        "description": "AI 落地页生成器",
+        "url": "https://pagen.so",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/6.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "SoraFM",
+        "description": "AI 视频生成器",
+        "url": "https://sorafm.trys.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/8.png",
+          "alt": "案例展示"
+        }
+      },
+      {
+        "title": "PodLM",
+        "description": "AI 播客生成器",
+        "url": "https://podlm.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/cases/9.png",
+          "alt": "案例展示"
+        }
+      }
+    ]
+  }
+}
