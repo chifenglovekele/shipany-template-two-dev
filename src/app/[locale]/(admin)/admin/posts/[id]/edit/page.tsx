@@ -52,12 +52,12 @@ export default async function PostEditPage({
     type: TaxonomyType.CATEGORY,
     status: TaxonomyStatus.PUBLISHED,
   });
-  const categoriesOptions = [
-    ...categories.map((category) => ({
-      title: category.title,
-      value: category.id,
-    })),
-  ];
+  const categoriesOptions = Array.isArray(categories)
+    ? categories.map((category) => ({
+        title: category.title,
+        value: category.id,
+      }))
+    : [];
 
   const form: Form = {
     fields: [

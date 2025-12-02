@@ -91,12 +91,14 @@ export default async function CategoryBlogPage({
   };
 
   // build category
-  const categories: CategoryType[] = categoriesData.map((category) => ({
-    id: category.id,
-    slug: category.slug,
-    title: category.title,
-    url: `/blog/category/${category.slug}`,
-  }));
+  const categories: CategoryType[] = Array.isArray(categoriesData)
+    ? categoriesData.map((category) => ({
+        id: category.id,
+        slug: category.slug,
+        title: category.title,
+        url: `/blog/category/${category.slug}`,
+      }))
+    : [];
   categories.unshift({
     id: 'all',
     slug: 'all',

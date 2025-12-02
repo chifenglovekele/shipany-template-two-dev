@@ -80,21 +80,26 @@ export async function getTaxonomies({
   page?: number;
   limit?: number;
 } = {}): Promise<Taxonomy[]> {
-  const result = await db()
-    .select()
-    .from(taxonomy)
-    .where(
-      and(
-        ids ? inArray(taxonomy.id, ids) : undefined,
-        type ? eq(taxonomy.type, type) : undefined,
-        status ? eq(taxonomy.status, status) : undefined
+  try {
+    const result = await db()
+      .select()
+      .from(taxonomy)
+      .where(
+        and(
+          ids ? inArray(taxonomy.id, ids) : undefined,
+          type ? eq(taxonomy.type, type) : undefined,
+          status ? eq(taxonomy.status, status) : undefined
+        )
       )
-    )
-    .orderBy(desc(taxonomy.createdAt), desc(taxonomy.updatedAt))
-    .limit(limit)
-    .offset((page - 1) * limit);
+      .orderBy(desc(taxonomy.createdAt), desc(taxonomy.updatedAt))
+      .limit(limit)
+      .offset((page - 1) * limit);
 
-  return result;
+    return Array.isArray(result) ? result : [];
+  } catch (error) {
+    console.error('Error fetching taxonomies:', error);
+    return [];
+  }
 }
 
 export async function getTaxonomiesCount({

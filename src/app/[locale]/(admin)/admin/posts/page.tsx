@@ -71,7 +71,7 @@ export default async function PostsPage({
           const categories = await getTaxonomies({
             ids: categoriesIds,
           });
-          if (!categories) {
+          if (!Array.isArray(categories) || categories.length === 0) {
             return '-';
           }
 
