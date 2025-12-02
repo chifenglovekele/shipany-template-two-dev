@@ -6,6 +6,9 @@ import { LocaleDetector } from '@/shared/blocks/common';
 import { DashboardLayout } from '@/shared/blocks/dashboard/layout';
 import { Sidebar as SidebarType } from '@/shared/types/blocks/dashboard';
 
+// Force dynamic rendering for all admin pages
+export const dynamic = 'force-dynamic';
+
 /**
  * Admin layout to manage datas
  */

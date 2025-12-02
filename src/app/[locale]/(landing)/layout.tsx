@@ -8,6 +8,9 @@ import {
   Header as HeaderType,
 } from '@/shared/types/blocks/landing';
 
+// Force dynamic rendering for all landing pages with database access
+export const dynamic = 'force-dynamic';
+
 export default async function LandingLayout({
   children,
 }: {

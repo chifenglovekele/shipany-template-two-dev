@@ -80,6 +80,13 @@ export async function getTaxonomies({
   page?: number;
   limit?: number;
 } = {}): Promise<Taxonomy[]> {
+  // Skip database query during build if DATABASE_URL is not set
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl || databaseUrl.trim() === '') {
+    console.warn('DATABASE_URL not set, returning empty array for taxonomies');
+    return [];
+  }
+
   try {
     const result = await db()
       .select()

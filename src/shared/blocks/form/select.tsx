@@ -30,11 +30,12 @@ export function Select({
         <SelectValue placeholder={field.placeholder} />
       </SelectTrigger>
       <SelectContent className="bg-background rounded-md">
-        {field.options?.map((option: any) => (
-          <SelectItem key={option.value} value={option.value}>
-            {option.title}
-          </SelectItem>
-        ))}
+        {Array.isArray(field.options) &&
+          field.options.map((option: any) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.title}
+            </SelectItem>
+          ))}
       </SelectContent>
     </SelectComponent>
   );

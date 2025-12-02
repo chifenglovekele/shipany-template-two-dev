@@ -11,19 +11,24 @@ export const i18n: I18nConfig = {
 };
 
 const iconHelper = (icon: string | undefined) => {
-  if (!icon) {
+  if (!icon || typeof icon !== 'string') {
     // You may set a default icon
     return;
   }
-  if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
+  try {
+    if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
+  } catch (error) {
+    console.warn('Failed to create icon:', icon, error);
+    return;
+  }
 };
 
-// Docs source
+// Docs source - temporarily disable icon helper to fix build issues
 export const docsSource = loader({
   baseUrl: '/docs',
   source: docs.toFumadocsSource(),
   i18n,
-  icon: iconHelper,
+  // icon: iconHelper, // Temporarily disabled
 });
 
 // Pages source (using root path)
@@ -31,7 +36,7 @@ export const pagesSource = loader({
   baseUrl: '/',
   source: pages.toFumadocsSource(),
   i18n,
-  icon: iconHelper,
+  // icon: iconHelper, // Temporarily disabled
 });
 
 // Posts source
@@ -39,7 +44,7 @@ export const postsSource = loader({
   baseUrl: '/blog',
   source: posts.toFumadocsSource(),
   i18n,
-  icon: iconHelper,
+  // icon: iconHelper, // Temporarily disabled
 });
 
 // Keep backward compatibility

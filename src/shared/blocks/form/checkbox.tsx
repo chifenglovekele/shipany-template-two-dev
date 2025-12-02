@@ -43,26 +43,27 @@ export function Checkbox({
 
   return (
     <div className="flex flex-col gap-4 py-2">
-      {field.options?.map((option: any) => (
-        <div key={option.value} className="flex items-start gap-4">
-          <CheckboxComponent
-            onCheckedChange={(checked) =>
-              handleCheckboxChange(option.value, checked as boolean)
-            }
-            name={field.name}
-            value={option.value}
-            checked={value.includes(option.value)}
-          />
-          <div className="grid gap-1">
-            <Label>{option.title}</Label>
-            {option.description && (
-              <p className="text-muted-foreground text-sm">
-                {option.description}
-              </p>
-            )}
+      {Array.isArray(field.options) &&
+        field.options.map((option: any) => (
+          <div key={option.value} className="flex items-start gap-4">
+            <CheckboxComponent
+              onCheckedChange={(checked) =>
+                handleCheckboxChange(option.value, checked as boolean)
+              }
+              name={field.name}
+              value={option.value}
+              checked={value.includes(option.value)}
+            />
+            <div className="grid gap-1">
+              <Label>{option.title}</Label>
+              {option.description && (
+                <p className="text-muted-foreground text-sm">
+                  {option.description}
+                </p>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }
