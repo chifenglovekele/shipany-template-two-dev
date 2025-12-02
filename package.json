@@ -147,6 +147,7 @@
     "@types/react-lazy-load-image-component": "^1.6.4",
     "autoprefixer": "^10.4.21",
     "babel-plugin-react-compiler": "^1.0.0",
+    "baseline-browser-mapping": "^2.8.32",
     "drizzle-kit": "^0.31.4",
     "eslint": "^9.37.0",
     "eslint-config-next": "16.0.0",
