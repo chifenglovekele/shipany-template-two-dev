@@ -4,7 +4,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { ChevronsUpDown, Loader2, LogOut, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { signOut, useSession } from '@/core/auth/client';
+import { signOut } from '@/core/auth/client';
 import { Link, useRouter } from '@/core/i18n/navigation';
 import { SmartIcon } from '@/shared/blocks/common';
 import { SignModal } from '@/shared/blocks/sign/sign-modal';
@@ -36,7 +36,9 @@ import { SidebarUser as SidebarUserType } from '@/shared/types/blocks/dashboard'
 // SSR/CSR hydration bug fix: Avoid rendering session-dependent UI until mounted on client
 export function SidebarUser({ user }: { user: SidebarUserType }) {
   const t = useTranslations('common.sign');
-  const { data: session, isPending } = useSession();
+  // Use user and isCheckSign from AppContext instead of calling useSession again
+  // This avoids duplicate session requests
+  const { user: sessionUser, isCheckSign } = useAppContext();
   const { isMobile, open } = useSidebar();
   const router = useRouter();
 
@@ -62,7 +64,7 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
     );
   }
 
-  if (session?.user) {
+  if (sessionUser) {
     return (
       <SidebarMenu className="gap-4 px-3">
         <SidebarMenuItem>
@@ -74,20 +76,20 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
               >
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage
-                    src={session?.user?.image || ''}
-                    alt={session?.user?.name}
+                    src={sessionUser?.image || ''}
+                    alt={sessionUser?.name}
                   />
                   <AvatarFallback className="rounded-lg">
-                    {session?.user?.name?.charAt(0)}
+                    {sessionUser?.name?.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">
-                    {session?.user?.name}
+                    {sessionUser?.name}
                   </span>
                   {user.show_email && (
                     <span className="truncate text-xs">
-                      {session?.user?.email}
+                      {sessionUser?.email}
                     </span>
                   )}
                 </div>
@@ -104,20 +106,20 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
                 <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <Avatar className="h-8 w-8 rounded-lg">
                     <AvatarImage
-                      src={session?.user?.image || ''}
-                      alt={session?.user?.name}
+                      src={sessionUser?.image || ''}
+                      alt={sessionUser?.name}
                     />
                     <AvatarFallback className="rounded-lg">
-                      {session?.user?.name?.charAt(0) || 'U'}
+                      {sessionUser?.name?.charAt(0) || 'U'}
                     </AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-semibold">
-                      {session?.user?.name}
+                      {sessionUser?.name}
                     </span>
                     {user.show_email && (
                       <span className="truncate text-xs">
-                        {session?.user?.email}
+                        {sessionUser?.email}
                       </span>
                     )}
                   </div>
@@ -160,7 +162,7 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
     <>
       {open ? (
         <div className="flex h-full items-center justify-center px-4 py-4">
-          {isPending ? (
+          {isCheckSign ? (
             <div className="flex w-full items-center justify-center">
               <Loader2 className="animate-spin" />
             </div>

@@ -136,6 +136,10 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     fetchConfigs();
   }, []);
 
+  // Use session.user.id as the dependency instead of the whole session object
+  // This prevents unnecessary re-renders when the session object reference changes
+  // but the actual user hasn't changed
+  const sessionUserId = session?.user?.id;
   useEffect(() => {
     if (session && session.user) {
       setUser(session.user as User);
@@ -143,7 +147,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     } else {
       setUser(null);
     }
-  }, [session]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionUserId]);
 
   useEffect(() => {
     if (
