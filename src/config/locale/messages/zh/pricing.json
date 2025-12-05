@@ -49,7 +49,9 @@
             "amount": 69900,
             "price": "¥699",
             "original_price": "¥1399",
-            "payment_providers": ["stripe"]
+            "payment_providers": [
+              "stripe"
+            ]
           }
         ],
         "unit": "",
@@ -92,7 +94,9 @@
             "amount": 139900,
             "price": "¥1399",
             "original_price": "¥1999",
-            "payment_providers": ["stripe"]
+            "payment_providers": [
+              "stripe"
+            ]
           }
         ],
         "unit": "",
@@ -133,7 +137,10 @@
             "amount": 199900,
             "price": "¥1999",
             "original_price": "¥2799",
-            "payment_providers": ["stripe", "creem"]
+            "payment_providers": [
+              "stripe",
+              "creem"
+            ]
           }
         ],
         "unit": "",
@@ -176,7 +183,7 @@
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
-        "product_id": "starter-monthly",
+        "product_id": "prod_54SMjNjUwM3zmES1Ev4WHk",
         "product_name": "ShipAny 模板入门版包月",
         "credits": 100,
         "valid_days": 30,
