@@ -11,40 +11,43 @@ export const i18n: I18nConfig = {
 };
 
 const iconHelper = (icon: string | undefined) => {
-  if (!icon || typeof icon !== 'string') {
+  if (!icon) {
     // You may set a default icon
     return;
   }
-  try {
-    if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
-  } catch (error) {
-    console.warn('Failed to create icon:', icon, error);
-    return;
-  }
+  if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
 };
 
-// Docs source - temporarily disable icon helper to fix build issues
+// Helper to adapt fumadocs-mdx source to fumadocs-core format
+// fumadocs-mdx returns { files: () => [...] } but fumadocs-core expects { files: [...] }
+function adaptSource(source: { files: (() => any[]) | any[] }) {
+  const files =
+    typeof source.files === 'function' ? source.files() : source.files;
+  return { files };
+}
+
+// Docs source
 export const docsSource = loader({
   baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
+  source: adaptSource(docs.toFumadocsSource()),
   i18n,
-  // icon: iconHelper, // Temporarily disabled
+  icon: iconHelper,
 });
 
 // Pages source (using root path)
 export const pagesSource = loader({
   baseUrl: '/',
-  source: pages.toFumadocsSource(),
+  source: adaptSource(pages.toFumadocsSource()),
   i18n,
-  // icon: iconHelper, // Temporarily disabled
+  icon: iconHelper,
 });
 
 // Posts source
 export const postsSource = loader({
   baseUrl: '/blog',
-  source: posts.toFumadocsSource(),
+  source: adaptSource(posts.toFumadocsSource()),
   i18n,
-  // icon: iconHelper, // Temporarily disabled
+  icon: iconHelper,
 });
 
 // Keep backward compatibility

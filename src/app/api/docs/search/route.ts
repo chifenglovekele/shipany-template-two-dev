@@ -7,6 +7,13 @@ import { icons } from 'lucide-react';
 
 import { source as originalSource } from '@/core/docs/source';
 
+// Helper to adapt fumadocs-mdx source to fumadocs-core format
+function adaptSource(source: { files: (() => any[]) | any[] }) {
+  const files =
+    typeof source.files === 'function' ? source.files() : source.files;
+  return { files };
+}
+
 // Create a modified i18n config that maps 'zh' to 'en' for Orama
 const searchI18n: I18nConfig = {
   defaultLanguage: 'en',
@@ -16,7 +23,7 @@ const searchI18n: I18nConfig = {
 // Create a separate source instance for search with only English language
 const searchSource = loader({
   baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
+  source: adaptSource(docs.toFumadocsSource()),
   i18n: searchI18n,
   icon(icon) {
     if (!icon) {
