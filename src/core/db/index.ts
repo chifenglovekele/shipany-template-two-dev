@@ -67,8 +67,9 @@ export function db() {
   const serverlessClient = postgres(databaseUrl, {
     prepare: false,
     max: 1, // Use single connection in serverless
-    idle_timeout: 20,
+    idle_timeout: 0, // Disable idle timeout to prevent negative timer issues in Vercel
     connect_timeout: 10,
+    max_lifetime: 30, // Close connection after 30 seconds to prevent stale connections
   });
 
   return drizzle({ client: serverlessClient });
