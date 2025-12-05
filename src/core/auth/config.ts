@@ -42,13 +42,15 @@ export async function getAuthOptions() {
           schema: schema,
         })
       : null,
-    // Session configuration - enable cookie cache to reduce database queries
-    // session: {
-    //   cookieCache: {
-    //     enabled: true,
-    //     maxAge: 5 * 60, // Cache session in cookie for 5 minutes (reduces DB queries)
-    //   },
-    // },
+    // Session configuration
+    session: {
+      // Enable cookie cache to reduce database queries
+      // This is critical to prevent excessive /api/auth/get-session requests
+      cookieCache: {
+        enabled: true,
+        maxAge: 5 * 60, // Cache session in cookie for 5 minutes
+      },
+    },
     emailAndPassword: {
       enabled: configs.email_auth_enabled !== 'false',
     },
