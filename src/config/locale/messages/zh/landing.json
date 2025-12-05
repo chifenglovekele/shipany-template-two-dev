@@ -86,9 +86,9 @@
   },
   "hero": {
     "id": "hero",
-    "title": "一小时快速上线你的 AI 创业项目",
+    "title": "一小时快速上线你的 AI 项目",
     "highlight_text": "一小时",
-    "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 项目模板。<br/>集成常用功能，快速上线你的产品。",
+    "description": "ShipAny 是用于构建 AI SaaS 项目的 NextJS 项目模板。<br/>集成常用功能，快速上线你的产品。",
     "announcement": {
       "badge": "全新",
       "title": "🎉 ShipAny 模板二已发布",
@@ -167,7 +167,7 @@
     "id": "introduce",
     "title": "ShipAny 是什么？",
     "label": "产品简介",
-    "description": "ShipAny 是专为 AI SaaS 创业项目打造的 NextJS 脚手架，包括丰富模板、组件及文档。",
+    "description": "ShipAny 是专为 AI SaaS 项目打造的 NextJS 脚手架，包括丰富模板、组件及文档。",
     "image": {
       "src": "/imgs/features/landing-page.png",
       "alt": "introduce"
@@ -215,7 +215,7 @@
     "id": "benefits",
     "title": "为何选择 ShipAny",
     "label": "产品优势",
-    "description": "你获得一切 AI 创业所需——从开箱即用的模板到专业技术支持。",
+    "description": "你获得一切 AI 项目所需——从开箱即用的模板到专业技术支持。",
     "items": [
       {
         "title": "全栈解决方案",
@@ -249,7 +249,7 @@
   "usage": {
     "id": "usage",
     "title": "三步使用 ShipAny 极速上线",
-    "description": "只需三步，快速开启你的 AI SaaS 创业之路：",
+    "description": "只需三步，快速开启你的 AI SaaS 之路：",
     "image": {
       "src": "/imgs/features/1.png",
       "alt": "usage"
@@ -350,7 +350,7 @@
   "testimonials": {
     "id": "testimonials",
     "title": "用户对 ShipAny 的评价",
-    "description": "听听开发者与创始人用 ShipAny 快速上线 AI 创业项目的故事。",
+    "description": "听听开发者与创始人用 ShipAny 快速上线 AI 项目的故事。",
     "items": [
       {
         "name": "David Chen",
@@ -391,7 +391,7 @@
       {
         "name": "James Wilson",
         "role": "GPTs.works 技术负责人",
-        "quote": "ShipAny 基础设施极其稳定。我们从 0 到 1 万用户，无需关心后端维护，是最棒的 AI 创业投资。",
+        "quote": "ShipAny 基础设施极其稳定。我们从 0 到 1 万用户，无需关心后端维护，是最棒的 AI 投资。",
         "image": {
           "src": "/imgs/avatars/5.png",
           "alt": "james"
@@ -416,7 +416,7 @@
     "items": [
       {
         "question": "ShipAny 是什么？怎么帮到我？",
-        "answer": "ShipAny 是专为 AI SaaS 创业设计的 NextJS 全套脚手架，内含开箱即用的模板、基础设施搭建和部署工具，让你数小时内上线 AI 产品。"
+        "answer": "ShipAny 是专为 AI SaaS 设计的 NextJS 全套脚手架，内含开箱即用的模板、基础设施搭建和部署工具，让你数小时内上线 AI 产品。"
       },
       {
         "question": "使用 ShipAny 需要很高的技术水平吗？",
@@ -478,7 +478,7 @@
     "id": "footer",
     "brand": {
       "title": "ShipAny Two",
-      "description": "ShipAny 是专为 AI SaaS 创业项目打造的 NextJS 模板。丰富模板与组件，极速交付你的产品。",
+      "description": "ShipAny 是专为 AI SaaS 项目打造的 NextJS 模板。丰富模板与组件，极速交付你的产品。",
       "logo": {
         "src": "/logo.png",
         "alt": "ShipAny Two"
