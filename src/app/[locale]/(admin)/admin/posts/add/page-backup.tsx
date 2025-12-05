@@ -1,2 +1,0 @@
-// Backup of original page
-

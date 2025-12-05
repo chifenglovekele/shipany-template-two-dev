@@ -5,15 +5,6 @@ import { getThemePage } from '@/core/theme';
 import { envConfigs } from '@/config';
 import { getLocalPage } from '@/shared/models/post';
 
-// Force dynamic rendering to avoid build-time data collection issues
-export const dynamic = 'force-dynamic';
-export const dynamicParams = true;
-
-// Prevent static generation for this dynamic page
-export async function generateStaticParams() {
-  return [];
-}
-
 export async function generateMetadata({
   params,
 }: {

@@ -4,8 +4,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import moment from 'moment';
 
 import { db } from '@/core/db';
-// Lazy load fumadocs sources to avoid build-time issues
-// import { pagesSource, postsSource } from '@/core/docs/source';
+import { pagesSource, postsSource } from '@/core/docs/source';
 import { generateTOC } from '@/core/docs/toc';
 import { post } from '@/config/db/schema';
 import { MarkdownContent } from '@/shared/blocks/common/markdown-content';
@@ -173,7 +172,7 @@ export async function getPost({
         description: postData.description || '',
         content: '',
         body: body,
-        toc: Array.isArray(toc) ? toc : [],
+        toc: toc,
         created_at:
           getPostDate({
             created_at: postData.createdAt.toISOString(),
@@ -206,51 +205,44 @@ export async function getLocalPost({
   locale: string;
   postPrefix?: string;
 }): Promise<BlogPostType | null> {
-  try {
-    // Dynamically import to avoid build-time issues
-    const { postsSource } = await import('@/core/docs/source');
-    const localPost = await postsSource.getPage([slug], locale);
-    if (!localPost) {
-      return null;
-    }
-
-    const MDXContent = localPost.data.body;
-    const body = (
-      <MDXContent
-        components={getMDXComponents({
-          // this allows you to link to other pages with relative file paths
-          a: createRelativeLink(postsSource, localPost),
-        })}
-      />
-    );
-
-    const frontmatter = localPost.data as any;
-
-    const post: BlogPostType = {
-      id: localPost.path,
-      slug: slug,
-      title: localPost.data.title || '',
-      description: localPost.data.description || '',
-      content: '',
-      body: body,
-      toc: Array.isArray(localPost.data.toc) ? localPost.data.toc : [], // Use fumadocs auto-generated TOC
-      created_at: frontmatter.created_at
-        ? getPostDate({
-            created_at: frontmatter.created_at,
-            locale,
-          })
-        : '',
-      author_name: frontmatter.author_name || '',
-      author_image: frontmatter.author_image || '',
-      author_role: '',
-      url: `${postPrefix}${slug}`,
-    };
-
-    return post;
-  } catch (error) {
-    console.error('Error loading local post:', slug, error);
+  const localPost = await postsSource.getPage([slug], locale);
+  if (!localPost) {
     return null;
   }
+
+  const MDXContent = localPost.data.body;
+  const body = (
+    <MDXContent
+      components={getMDXComponents({
+        // this allows you to link to other pages with relative file paths
+        a: createRelativeLink(postsSource, localPost),
+      })}
+    />
+  );
+
+  const frontmatter = localPost.data as any;
+
+  const post: BlogPostType = {
+    id: localPost.path,
+    slug: slug,
+    title: localPost.data.title || '',
+    description: localPost.data.description || '',
+    content: '',
+    body: body,
+    toc: localPost.data.toc, // Use fumadocs auto-generated TOC
+    created_at: frontmatter.created_at
+      ? getPostDate({
+          created_at: frontmatter.created_at,
+          locale,
+        })
+      : '',
+    author_name: frontmatter.author_name || '',
+    author_image: frontmatter.author_image || '',
+    author_role: '',
+    url: `${postPrefix}${slug}`,
+  };
+
+  return post;
 }
 
 // get local page from: content/pages/*.md
@@ -261,51 +253,44 @@ export async function getLocalPage({
   slug: string;
   locale: string;
 }): Promise<BlogPostType | null> {
-  try {
-    // Dynamically import to avoid build-time issues
-    const { pagesSource } = await import('@/core/docs/source');
-    const localPage = await pagesSource.getPage([slug], locale);
-    if (!localPage) {
-      return null;
-    }
-
-    const MDXContent = localPage.data.body;
-    const body = (
-      <MDXContent
-        components={getMDXComponents({
-          // this allows you to link to other pages with relative file paths
-          a: createRelativeLink(pagesSource, localPage),
-        })}
-      />
-    );
-
-    const frontmatter = localPage.data as any;
-
-    const post: BlogPostType = {
-      id: localPage.path,
-      slug: slug,
-      title: localPage.data.title || '',
-      description: localPage.data.description || '',
-      content: '',
-      body: body,
-      toc: Array.isArray(localPage.data.toc) ? localPage.data.toc : [], // Use fumadocs auto-generated TOC
-      created_at: frontmatter.created_at
-        ? getPostDate({
-            created_at: frontmatter.created_at,
-            locale,
-          })
-        : '',
-      author_name: frontmatter.author_name || '',
-      author_image: frontmatter.author_image || '',
-      author_role: '',
-      url: `/${locale}/${slug}`,
-    };
-
-    return post;
-  } catch (error) {
-    console.error('Error loading local page:', slug, error);
+  const localPage = await pagesSource.getPage([slug], locale);
+  if (!localPage) {
     return null;
   }
+
+  const MDXContent = localPage.data.body;
+  const body = (
+    <MDXContent
+      components={getMDXComponents({
+        // this allows you to link to other pages with relative file paths
+        a: createRelativeLink(pagesSource, localPage),
+      })}
+    />
+  );
+
+  const frontmatter = localPage.data as any;
+
+  const post: BlogPostType = {
+    id: localPage.path,
+    slug: slug,
+    title: localPage.data.title || '',
+    description: localPage.data.description || '',
+    content: '',
+    body: body,
+    toc: localPage.data.toc, // Use fumadocs auto-generated TOC
+    created_at: frontmatter.created_at
+      ? getPostDate({
+          created_at: frontmatter.created_at,
+          locale,
+        })
+      : '',
+    author_name: frontmatter.author_name || '',
+    author_image: frontmatter.author_image || '',
+    author_role: '',
+    url: `/${locale}/${slug}`,
+  };
+
+  return post;
 }
 
 // get posts and categories, both from local files and database
@@ -475,53 +460,47 @@ export async function getLocalPostsAndCategories({
 }) {
   const localPostsList: BlogPostType[] = [];
 
-  try {
-    // Dynamically import to avoid build-time issues
-    const { postsSource } = await import('@/core/docs/source');
-    // get posts from local files
-    const localPosts = postsSource.getPages(locale);
+  // get posts from local files
+  const localPosts = postsSource.getPages(locale);
 
-    // no local posts
-    if (!localPosts || localPosts.length === 0) {
-      return {
-        posts: [],
-        postsCount: 0,
-        categories: [],
-        categoriesCount: 0,
-      };
-    }
-
-    // Build posts data from local content
-    localPostsList.push(
-      ...localPosts.map((post) => {
-        const frontmatter = post.data as any;
-        const slug = getPostSlug({
-          url: post.url,
-          locale,
-          prefix: postPrefix,
-        });
-
-        return {
-          id: post.path,
-          slug: slug,
-          title: post.data.title || '',
-          description: post.data.description || '',
-          author_name: frontmatter.author_name || '',
-          author_image: frontmatter.author_image || '',
-          created_at: frontmatter.created_at
-            ? getPostDate({
-                created_at: frontmatter.created_at,
-                locale,
-              })
-            : '',
-          image: frontmatter.image || '',
-          url: `${postPrefix}${slug}`,
-        };
-      })
-    );
-  } catch (error) {
-    console.error('Error loading local posts:', error);
+  // no local posts
+  if (!localPosts || localPosts.length === 0) {
+    return {
+      posts: [],
+      postsCount: 0,
+      categories: [],
+      categoriesCount: 0,
+    };
   }
+
+  // Build posts data from local content
+  localPostsList.push(
+    ...localPosts.map((post) => {
+      const frontmatter = post.data as any;
+      const slug = getPostSlug({
+        url: post.url,
+        locale,
+        prefix: postPrefix,
+      });
+
+      return {
+        id: post.path,
+        slug: slug,
+        title: post.data.title || '',
+        description: post.data.description || '',
+        author_name: frontmatter.author_name || '',
+        author_image: frontmatter.author_image || '',
+        created_at: frontmatter.created_at
+          ? getPostDate({
+              created_at: frontmatter.created_at,
+              locale,
+            })
+          : '',
+        image: frontmatter.image || '',
+        url: `${postPrefix}${slug}`,
+      };
+    })
+  );
 
   return {
     posts: localPostsList,

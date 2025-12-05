@@ -80,33 +80,21 @@ export async function getTaxonomies({
   page?: number;
   limit?: number;
 } = {}): Promise<Taxonomy[]> {
-  // Skip database query during build if DATABASE_URL is not set
-  const databaseUrl = process.env.DATABASE_URL;
-  if (!databaseUrl || databaseUrl.trim() === '') {
-    console.warn('DATABASE_URL not set, returning empty array for taxonomies');
-    return [];
-  }
-
-  try {
-    const result = await db()
-      .select()
-      .from(taxonomy)
-      .where(
-        and(
-          ids ? inArray(taxonomy.id, ids) : undefined,
-          type ? eq(taxonomy.type, type) : undefined,
-          status ? eq(taxonomy.status, status) : undefined
-        )
+  const result = await db()
+    .select()
+    .from(taxonomy)
+    .where(
+      and(
+        ids ? inArray(taxonomy.id, ids) : undefined,
+        type ? eq(taxonomy.type, type) : undefined,
+        status ? eq(taxonomy.status, status) : undefined
       )
-      .orderBy(desc(taxonomy.createdAt), desc(taxonomy.updatedAt))
-      .limit(limit)
-      .offset((page - 1) * limit);
+    )
+    .orderBy(desc(taxonomy.createdAt), desc(taxonomy.updatedAt))
+    .limit(limit)
+    .offset((page - 1) * limit);
 
-    return Array.isArray(result) ? result : [];
-  } catch (error) {
-    console.error('Error fetching taxonomies:', error);
-    return [];
-  }
+  return result;
 }
 
 export async function getTaxonomiesCount({
