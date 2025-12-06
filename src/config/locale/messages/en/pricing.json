@@ -5,9 +5,9 @@
   },
   "pricing": {
     "id": "pricing",
-    "sr_only_title": "ShipAny Pricing",
+    "sr_only_title": "PPP Calculator Pricing",
     "title": "Pricing",
-    "description": "Get all features of ShipAny, Ship your AI SaaS startups fast.",
+    "description": "Get all features of PPP Calculator, Ship your AI SaaS startups fast.",
     "groups": [
       {
         "name": "one-time",
@@ -47,12 +47,12 @@
         "is_featured": false,
         "tip": "Pay once. Build unlimited projects!",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "starter",
-        "product_name": "ShipAny Boilerplate Starter",
+        "product_name": "PPP Calculator Boilerplate Starter",
         "credits": 100,
         "valid_days": 30,
         "group": "one-time"
@@ -81,12 +81,12 @@
         "is_featured": true,
         "tip": "Pay once. Build unlimited projects!",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard",
-        "product_name": "ShipAny Boilerplate Standard",
+        "product_name": "PPP Calculator Boilerplate Standard",
         "credits": 200,
         "valid_days": 90,
         "group": "one-time"
@@ -113,12 +113,12 @@
         "is_featured": false,
         "tip": "Pay once. Build unlimited projects!",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium",
-        "product_name": "ShipAny Boilerplate Premium",
+        "product_name": "PPP Calculator Boilerplate Premium",
         "credits": 300,
         "valid_days": 365,
         "group": "one-time"
@@ -145,7 +145,7 @@
         "is_featured": false,
         "tip": "Pay monthly. Build unlimited projects!",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
@@ -181,12 +181,12 @@
         "is_featured": true,
         "tip": "Pay monthly. Ship Fast with your SaaS Startups.",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard-monthly",
-        "product_name": "ShipAny Boilerplate Standard Monthly",
+        "product_name": "PPP Calculator Boilerplate Standard Monthly",
         "credits": 200,
         "valid_days": 30,
         "group": "monthly",
@@ -214,12 +214,12 @@
         "is_featured": false,
         "tip": "Pay monthly. Ship Any AI SaaS Startups.",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium-monthly",
-        "product_name": "ShipAny Boilerplate Premium Monthly",
+        "product_name": "PPP Calculator Boilerplate Premium Monthly",
         "credits": 300,
         "valid_days": 30,
         "group": "monthly",
@@ -247,12 +247,12 @@
         "is_featured": false,
         "tip": "Pay annually. Build unlimited projects!",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "starter-yearly",
-        "product_name": "ShipAny Boilerplate Starter Annually",
+        "product_name": "PPP Calculator Boilerplate Starter Annually",
         "credits": 1200,
         "valid_days": 365,
         "group": "yearly",
@@ -282,12 +282,12 @@
         "is_featured": true,
         "tip": "Pay annually. Ship Fast with your SaaS Startups.",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard-yearly",
-        "product_name": "ShipAny Boilerplate Standard Annually",
+        "product_name": "PPP Calculator Boilerplate Standard Annually",
         "credits": 2400,
         "valid_days": 365,
         "group": "yearly",
@@ -315,12 +315,12 @@
         "is_featured": false,
         "tip": "Pay annually. Ship Any AI SaaS Startups.",
         "button": {
-          "title": "Get ShipAny",
+          "title": "Get PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium-yearly",
-        "product_name": "ShipAny Boilerplate Premium Annually",
+        "product_name": "PPP Calculator Boilerplate Premium Annually",
         "credits": 3600,
         "valid_days": 365,
         "group": "yearly",

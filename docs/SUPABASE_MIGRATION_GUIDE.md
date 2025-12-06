@@ -58,7 +58,7 @@ node --version
 ```env
 # App Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=ShipAny App
+NEXT_PUBLIC_APP_NAME=PPP Calculator App
 NEXT_PUBLIC_THEME=default
 NEXT_PUBLIC_APPEARANCE=system
 NEXT_PUBLIC_DEFAULT_LOCALE=en
@@ -170,7 +170,7 @@ pnpm db:studio
 | `AUTH_SECRET` | **⚠️ 生成新的随机密钥（生产环境必须不同！）** |
 | `AUTH_URL` | `https://your-domain.vercel.app` |
 | `NEXT_PUBLIC_APP_URL` | `https://your-domain.vercel.app` |
-| `NEXT_PUBLIC_APP_NAME` | `ShipAny App` |
+| `NEXT_PUBLIC_APP_NAME` | `PPP Calculator App` |
 | `NEXT_PUBLIC_THEME` | `default` |
 | `NEXT_PUBLIC_APPEARANCE` | `system` |
 | `NEXT_PUBLIC_DEFAULT_LOCALE` | `en` |
@@ -288,7 +288,7 @@ A:
 - Supabase 文档: https://supabase.com/docs
 - Drizzle ORM 文档: https://orm.drizzle.team
 - Better Auth 文档: https://www.better-auth.com
-- ShipAny 文档: https://shipany.ai/docs
+- PPP Calculator 文档: https://pppcalculator.world/docs
 
 祝您迁移顺利！🎉
 

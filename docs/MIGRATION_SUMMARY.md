@@ -61,7 +61,7 @@ node --version
 ```env
 # App Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=ShipAny App
+NEXT_PUBLIC_APP_NAME=PPP Calculator App
 NEXT_PUBLIC_THEME=default
 NEXT_PUBLIC_APPEARANCE=system
 NEXT_PUBLIC_DEFAULT_LOCALE=en
@@ -290,5 +290,5 @@ pnpm db:studio
 
 ---
 
-**Made with ❤️ for ShipAny Template Two**
+**Made with ❤️ for PPP Calculator Template Two**
 

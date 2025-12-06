@@ -43,7 +43,7 @@ node --version  # 验证版本
 ```env
 # App Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=ShipAny App
+NEXT_PUBLIC_APP_NAME=PPP Calculator
 NEXT_PUBLIC_THEME=default
 NEXT_PUBLIC_APPEARANCE=system
 NEXT_PUBLIC_DEFAULT_LOCALE=en
@@ -254,5 +254,5 @@ OPENAI_API_KEY=sk-...
 
 **🎉 完成以上步骤，您就可以开始开发了！**
 
-**Made with ❤️ for ShipAny**
+**Made with ❤️ for PPP Calculator**
 

@@ -1,12 +1,12 @@
 {
   "metadata": {
     "title": "Showcases",
-    "description": "Awesome projects built with ShipAny"
+    "description": "Awesome projects built with PPP Calculator"
   },
   "showcases": {
     "id": "showcase",
     "sr_only_title": "Showcases",
-    "title": "AI SaaS Startups built with ShipAny",
+    "title": "AI SaaS Startups built with PPP Calculator",
     "description": "Easy to use and fast to ship.",
     "items": [
       {

@@ -12,19 +12,19 @@
 
 ### 核心文档（共 6 个）
 
-| 文档 | 用途 | 优先级 |
-|------|------|--------|
-| **[SUPABASE_README.md](./SUPABASE_README.md)** | 📚 文档索引导航 | ⭐⭐⭐ |
-| **[QUICK_START.md](./QUICK_START.md)** | ⚡ 5 步快速启动 | ⭐⭐⭐ |
-| **[MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md)** | 📋 迁移工作总结 | ⭐⭐ |
-| **[ENV_SETUP.md](./ENV_SETUP.md)** | 🔧 环境变量配置 | ⭐⭐⭐ |
-| **[SUPABASE_MIGRATION_GUIDE.md](./SUPABASE_MIGRATION_GUIDE.md)** | 📚 完整迁移指南 | ⭐⭐ |
-| **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)** | 🚀 部署详细说明 | ⭐⭐⭐ |
+| 文档                                                             | 用途            | 优先级 |
+| ---------------------------------------------------------------- | --------------- | ------ |
+| **[SUPABASE_README.md](./SUPABASE_README.md)**                   | 📚 文档索引导航 | ⭐⭐⭐ |
+| **[QUICK_START.md](./QUICK_START.md)**                           | ⚡ 5 步快速启动 | ⭐⭐⭐ |
+| **[MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md)**               | 📋 迁移工作总结 | ⭐⭐   |
+| **[ENV_SETUP.md](./ENV_SETUP.md)**                               | 🔧 环境变量配置 | ⭐⭐⭐ |
+| **[SUPABASE_MIGRATION_GUIDE.md](./SUPABASE_MIGRATION_GUIDE.md)** | 📚 完整迁移指南 | ⭐⭐   |
+| **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)**               | 🚀 部署详细说明 | ⭐⭐⭐ |
 
 ### 更新的文档
 
-| 文档 | 更新内容 |
-|------|---------|
+| 文档                         | 更新内容                                             |
+| ---------------------------- | ---------------------------------------------------- |
 | **[README.md](./README.md)** | ✅ 添加 Supabase 快速开始章节<br>✅ 添加文档导航链接 |
 
 ---
@@ -34,12 +34,14 @@
 ### ✅ 采用方案：方案 A（仅迁移数据库）
 
 **优势：**
+
 - ✅ **零代码改动** - 所有业务代码保持不变
 - ✅ **保持架构** - 继续使用 Drizzle ORM + Better Auth
 - ✅ **完全兼容** - postgres-js 驱动与 Supabase 完美兼容
 - ✅ **快速迁移** - 仅需 15-20 分钟完成配置
 
 **改动内容：**
+
 - 仅更改 `DATABASE_URL` 环境变量
 - 无需修改任何代码文件
 
@@ -49,44 +51,50 @@
 
 ### 已配置的 Supabase 信息
 
-| 配置项 | 值 |
-|--------|-----|
+| 配置项           | 值                                         |
+| ---------------- | ------------------------------------------ |
 | **Supabase URL** | `https://xvhejrgnzluvkxhzgqqc.supabase.co` |
-| **项目 ID** | `xvhejrgnzluvkxhzgqqc` |
-| **区域** | `aws-1-us-east-1` |
-| **连接方式** | Connection Pooler (Port 6543) |
-| **数据库类型** | PostgreSQL |
+| **项目 ID**      | `xvhejrgnzluvkxhzgqqc`                     |
+| **区域**         | `aws-1-us-east-1`                          |
+| **连接方式**     | Connection Pooler (Port 6543)              |
+| **数据库类型**   | PostgreSQL                                 |
 
 ### 数据库架构（17 个表）
 
 #### 认证相关 (4 个表)
+
 - ✅ `user` - 用户表
 - ✅ `session` - 会话表
 - ✅ `account` - 账号关联表
 - ✅ `verification` - 验证表
 
 #### 业务相关 (4 个表)
+
 - ✅ `order` - 订单表
 - ✅ `subscription` - 订阅表
 - ✅ `credit` - 积分表
 - ✅ `config` - 配置表
 
 #### 内容相关 (2 个表)
+
 - ✅ `post` - 文章表
 - ✅ `taxonomy` - 分类表
 
 #### AI 功能 (3 个表)
+
 - ✅ `ai_task` - AI 任务表
 - ✅ `chat` - 聊天表
 - ✅ `chat_message` - 聊天消息表
 
 #### 权限管理 (4 个表)
+
 - ✅ `role` - 角色表
 - ✅ `permission` - 权限表
 - ✅ `role_permission` - 角色-权限关联表
 - ✅ `user_role` - 用户-角色关联表
 
 #### API 管理 (1 个表)
+
 - ✅ `apikey` - API 密钥表
 
 ---
@@ -96,13 +104,17 @@
 ### 📖 第一步：选择入口文档
 
 #### 快速上手（推荐）
+
 👉 **[QUICK_START.md](./QUICK_START.md)**
+
 - 15-20 分钟完成配置
 - 5 个简单步骤
 - 立即开始开发
 
 #### 完整了解
+
 👉 **[SUPABASE_README.md](./SUPABASE_README.md)**
+
 - 浏览所有文档
 - 选择适合您的路径
 - 全面了解迁移细节
@@ -130,7 +142,7 @@ fnm default 18
 
 ```env
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=ShipAny App
+NEXT_PUBLIC_APP_NAME=PPP Calculator App
 DATABASE_URL=postgres://postgres.xvhejrgnzluvkxhzgqqc:chi_3785523@aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x
 DATABASE_PROVIDER=postgresql
 AUTH_SECRET=<生成的密钥>
@@ -138,6 +150,7 @@ AUTH_URL=http://localhost:3000
 ```
 
 **生成 AUTH_SECRET：**
+
 ```powershell
 [Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Minimum 0 -Maximum 256 }) -as [byte[]])
 ```
@@ -194,6 +207,7 @@ pnpm db:studio
 **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)**
 
 包含：
+
 - 环境变量完整配置
 - 部署步骤详解
 - 生产环境最佳实践
@@ -263,13 +277,13 @@ pnpm db:studio
 
 ### 文档资源
 
-| 问题类型 | 查看文档 |
-|---------|---------|
-| 快速上手 | [QUICK_START.md](./QUICK_START.md) |
-| 环境配置 | [ENV_SETUP.md](./ENV_SETUP.md) |
+| 问题类型 | 查看文档                                                     |
+| -------- | ------------------------------------------------------------ |
+| 快速上手 | [QUICK_START.md](./QUICK_START.md)                           |
+| 环境配置 | [ENV_SETUP.md](./ENV_SETUP.md)                               |
 | 迁移细节 | [SUPABASE_MIGRATION_GUIDE.md](./SUPABASE_MIGRATION_GUIDE.md) |
-| 部署问题 | [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) |
-| 文档导航 | [SUPABASE_README.md](./SUPABASE_README.md) |
+| 部署问题 | [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)               |
+| 文档导航 | [SUPABASE_README.md](./SUPABASE_README.md)                   |
 
 ### 外部资源
 
@@ -281,23 +295,23 @@ pnpm db:studio
 
 ### 社区支持
 
-- [GitHub Issues](https://github.com/shipanyai/shipany-template-two/issues)
-- [ShipAny 文档](https://shipany.ai/docs)
+- [GitHub Issues](https://github.com/pppcalculator/pppcalculator/issues)
+- [PPP Calculator 文档](https://pppcalculator.world/docs)
 
 ---
 
 ## ⏱️ 预计时间
 
-| 阶段 | 时间 |
-|------|------|
-| 阅读文档 | 5-10 分钟 |
-| 升级 Node.js（如需要） | 5 分钟 |
-| 配置环境变量 | 3 分钟 |
-| 初始化数据库 | 5 分钟 |
-| 测试验证 | 5 分钟 |
-| **本地开发总计** | **约 20-30 分钟** |
-| 部署到 Vercel | 10-15 分钟 |
-| **完整流程总计** | **约 30-45 分钟** |
+| 阶段                   | 时间              |
+| ---------------------- | ----------------- |
+| 阅读文档               | 5-10 分钟         |
+| 升级 Node.js（如需要） | 5 分钟            |
+| 配置环境变量           | 3 分钟            |
+| 初始化数据库           | 5 分钟            |
+| 测试验证               | 5 分钟            |
+| **本地开发总计**       | **约 20-30 分钟** |
+| 部署到 Vercel          | 10-15 分钟        |
+| **完整流程总计**       | **约 30-45 分钟** |
 
 ---
 
@@ -344,7 +358,6 @@ pnpm db:studio
 
 ---
 
-**Made with ❤️ for ShipAny Template Two**
+**Made with ❤️ for PPP Calculator Template Two**
 
 **Supabase Migration Completed - 2024-12-01**
-

@@ -1,12 +1,12 @@
 {
   "metadata": {
     "title": "案例展示",
-    "description": "用 ShipAny 打造的精彩项目"
+    "description": "用 PPP Calculator 打造的精彩项目"
   },
   "showcases": {
     "id": "showcase",
     "sr_only_title": "案例展示",
-    "title": "用 ShipAny 构建的 AI SaaS 创业项目",
+    "title": "用 PPP Calculator 构建的 AI SaaS 创业项目",
     "description": "易用且极速上线。",
     "items": [
       {

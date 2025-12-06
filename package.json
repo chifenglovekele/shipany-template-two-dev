@@ -1,20 +1,20 @@
 {
-  "name": "shipany-template-two",
+  "name": "pppcalculator",
   "version": "1.2.0",
   "private": true,
-  "author": "ShipAny.ai",
-  "homepage": "https://shipany.ai",
+  "author": "pppcalculator",
+  "homepage": "https://pppcalculator.world",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shipanyai/shipany-template-two"
+    "url": "https://github.com/pppcalculator/pppcalculator"
   },
   "keywords": [
-    "shipany",
-    "shipany-template-two",
-    "ai-saas-boilerplate",
-    "ai-saas-template",
-    "ai-saas-framework",
-    "ai-saas-development"
+    "pppcalculator",
+    "ppp-calculator",
+    "purchasing-power-parity",
+    "currency-converter",
+    "ppp-tool",
+    "economic-calculator"
   ],
   "scripts": {
     "dev": "next dev --turbopack",

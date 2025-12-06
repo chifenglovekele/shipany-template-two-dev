@@ -5,9 +5,9 @@
   },
   "pricing": {
     "id": "pricing",
-    "sr_only_title": "ShipAny 价格表",
+    "sr_only_title": "PPP Calculator 价格表",
     "title": "价格",
-    "description": "获取 ShipAny 的全部功能，极速交付你的 AI SaaS 创业项目。",
+    "description": "获取 PPP Calculator 的全部功能，极速交付你的 AI SaaS 创业项目。",
     "groups": [
       {
         "name": "one-time",
@@ -58,12 +58,12 @@
         "is_featured": false,
         "tip": "一次付费，畅享无限项目部署！",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "starter",
-        "product_name": "ShipAny 模板入门版",
+        "product_name": "PPP Calculator 模板入门版",
         "credits": 100,
         "valid_days": 30,
         "group": "one-time"
@@ -103,12 +103,12 @@
         "is_featured": true,
         "tip": "一次付费，畅享无限项目部署！",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard",
-        "product_name": "ShipAny 模板标准版",
+        "product_name": "PPP Calculator 模板标准版",
         "credits": 200,
         "valid_days": 90,
         "group": "one-time"
@@ -147,12 +147,12 @@
         "is_featured": false,
         "tip": "一次付费，畅享无限项目部署！",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium",
-        "product_name": "ShipAny 模板高级版",
+        "product_name": "PPP Calculator 模板高级版",
         "credits": 300,
         "valid_days": 365,
         "group": "one-time"
@@ -179,7 +179,7 @@
         "is_featured": false,
         "tip": "按月付费，畅享无限项目部署！",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
@@ -215,12 +215,12 @@
         "is_featured": true,
         "tip": "按月付费，极速上线你的 SaaS 项目。",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard-monthly",
-        "product_name": "ShipAny 模板标准版包月",
+        "product_name": "PPP Calculator 模板标准版包月",
         "credits": 200,
         "valid_days": 30,
         "group": "monthly",
@@ -248,12 +248,12 @@
         "is_featured": false,
         "tip": "按月付费，助你交付任何 AI SaaS 项目。",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium-monthly",
-        "product_name": "ShipAny 模板高级版包月",
+        "product_name": "PPP Calculator 模板高级版包月",
         "credits": 300,
         "valid_days": 30,
         "group": "monthly",
@@ -281,12 +281,12 @@
         "is_featured": false,
         "tip": "按年付费，畅享无限项目部署！",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "starter-yearly",
-        "product_name": "ShipAny 模板入门版包年",
+        "product_name": "PPP Calculator 模板入门版包年",
         "credits": 1200,
         "valid_days": 365,
         "group": "yearly",
@@ -316,12 +316,12 @@
         "is_featured": true,
         "tip": "按年付费，极速上线你的 SaaS 项目。",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "standard-yearly",
-        "product_name": "ShipAny 模板标准版包年",
+        "product_name": "PPP Calculator 模板标准版包年",
         "credits": 2400,
         "valid_days": 365,
         "group": "yearly",
@@ -349,12 +349,12 @@
         "is_featured": false,
         "tip": "按年付费，助你交付任何 AI SaaS 项目。",
         "button": {
-          "title": "获取 ShipAny",
+          "title": "获取 PPP Calculator",
           "url": "/#pricing",
           "icon": "RiFlashlightFill"
         },
         "product_id": "premium-yearly",
-        "product_name": "ShipAny 模板高级版包年",
+        "product_name": "PPP Calculator 模板高级版包年",
         "credits": 3600,
         "valid_days": 365,
         "group": "yearly",

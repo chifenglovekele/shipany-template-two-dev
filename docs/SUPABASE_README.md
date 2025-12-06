@@ -174,11 +174,11 @@ AUTH_SECRET=<生成的随机密钥>
 - [Better Auth 文档](https://www.better-auth.com)
 - [Vercel 文档](https://vercel.com/docs)
 
-### ShipAny 资源
+### PPP Calculator 资源
 
-- [ShipAny 文档](https://shipany.ai/docs)
-- [ShipAny 模板](https://shipany.ai/templates)
-- [GitHub Issues](https://github.com/shipanyai/shipany-template-two/issues)
+- [PPP Calculator 文档](https://pppcalculator.world/docs)
+- [PPP Calculator 模板](https://pppcalculator.world/templates)
+- [GitHub Issues](https://github.com/pppcalculator/pppcalculator/issues)
 
 ---
 
@@ -187,7 +187,7 @@ AUTH_SECRET=<生成的随机密钥>
 ### 技术支持
 
 1. 查看对应文档的"常见问题"章节
-2. 搜索 [GitHub Issues](https://github.com/shipanyai/shipany-template-two/issues)
+2. 搜索 [GitHub Issues](https://github.com/pppcalculator/pppcalculator/issues)
 3. 提交新的 Issue
 
 ### 社区资源
@@ -214,5 +214,5 @@ AUTH_SECRET=<生成的随机密钥>
 
 如有任何问题，请参考对应文档或联系技术支持。
 
-**Made with ❤️ for ShipAny Template Two**
+**Made with ❤️ for PPP Calculator Template Two**
 

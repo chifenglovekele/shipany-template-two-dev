@@ -1,4 +1,4 @@
-# ShipAny Template Two
+# PPP Calculator
 
 > **📚 Supabase 迁移完成！** 查看 **[SUPABASE_README.md](./SUPABASE_README.md)** 了解所有文档和快速开始指南。
 
@@ -15,12 +15,14 @@ This template uses **Supabase** as the PostgreSQL database provider.
 ### 2. Environment Setup
 
 **Step 1**: Copy environment configuration
+
 ```bash
 # Create .env.local file in project root
 # See ENV_SETUP.md for complete configuration guide
 ```
 
 **Step 2**: Configure Supabase credentials in `.env.local`
+
 ```env
 DATABASE_URL=your-supabase-connection-pooler-url
 DATABASE_PROVIDER=postgresql
@@ -59,18 +61,12 @@ See **[ENV_SETUP.md](./ENV_SETUP.md)** → "Vercel 部署配置" section for dep
 
 ## 📚 Documentation
 
-Read [ShipAny Document](https://shipany.ai/docs/quick-start) to start your AI SaaS project.
-
-## 🛒 Buy Templates
-
-Check [ShipAny Templates](https://shipany.ai/templates) to buy Business Templates.
+Read [PPP Calculator Document](https://pppcalculator.world/docs/quick-start) to start your project.
 
 ## 💬 Feedback
 
-Submit your feedbacks on [Github Issues](https://github.com/shipanyai/shipany-template-two/issues)
+Submit your feedbacks on [Github Issues](https://github.com/pppcalculator/pppcalculator/issues)
 
 ## 📄 LICENSE
 
-!!! Please do not publicly release ShipAny's Code. Illegal use will be prosecuted
-
-[ShipAny LICENSE](./LICENSE)
+[PPP Calculator LICENSE](./LICENSE)

@@ -9,7 +9,7 @@
 ```bash
 # App Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=ShipAny App
+NEXT_PUBLIC_APP_NAME=PPP Calculator
 NEXT_PUBLIC_THEME=default
 NEXT_PUBLIC_APPEARANCE=system
 NEXT_PUBLIC_DEFAULT_LOCALE=en
@@ -83,7 +83,7 @@ pnpm rbac:init
 | `AUTH_SECRET` | `你生成的随机密钥` | 认证加密密钥（⚠️ 生产环境必须使用新密钥） |
 | `AUTH_URL` | `https://your-domain.vercel.app` | 生产环境域名 |
 | `NEXT_PUBLIC_APP_URL` | `https://your-domain.vercel.app` | 应用 URL |
-| `NEXT_PUBLIC_APP_NAME` | `ShipAny App` | 应用名称 |
+| `NEXT_PUBLIC_APP_NAME` | `PPP Calculator` | 应用名称 |
 
 ### 可选变量
 

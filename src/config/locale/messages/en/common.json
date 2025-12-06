@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "ShipAny Template Two",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "PPP Calculator",
+    "description": "PPP Calculator helps you understand the real purchasing power of your money across different countries.",
+    "keywords": "ppp-calculator, purchasing-power-parity, currency-converter"
   },
   "sign": {
     "sign_in_title": "Sign In",

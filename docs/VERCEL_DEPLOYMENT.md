@@ -93,7 +93,7 @@ vercel
 | 变量名 | Production 值 | Preview 值 | Development 值 |
 |--------|---------------|------------|----------------|
 | `NEXT_PUBLIC_APP_URL` | `https://your-domain.vercel.app` | `https://your-preview.vercel.app` | `http://localhost:3000` |
-| `NEXT_PUBLIC_APP_NAME` | `ShipAny App` | `ShipAny App` | `ShipAny App` |
+| `NEXT_PUBLIC_APP_NAME` | `PPP Calculator` | `PPP Calculator` | `PPP Calculator` |
 | `NEXT_PUBLIC_THEME` | `default` | `default` | `default` |
 | `NEXT_PUBLIC_APPEARANCE` | `system` | `system` | `system` |
 | `NEXT_PUBLIC_DEFAULT_LOCALE` | `en` | `en` | `en` |

@@ -1,10 +1,10 @@
 {
   "header": {
     "brand": {
-      "title": "ShipAny Two",
+      "title": "PPP Calculator",
       "logo": {
         "src": "/logo.png",
-        "alt": "ShipAny Two"
+        "alt": "PPP Calculator"
       },
       "url": "/admin"
     },
