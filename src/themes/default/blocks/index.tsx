@@ -21,3 +21,7 @@ export * from './pricing';
 export * from './blog';
 export * from './blog-detail';
 export * from './page-detail';
+
+// PPP Converter components
+export * from './currency-converter';
+export * from './conversion-result';
