@@ -308,99 +308,6 @@
       }
     ]
   },
-  "testimonials": {
-    "id": "testimonials",
-    "title": "用户对 PPP Calculator 的评价",
-    "description": "听听开发者与创始人用 PPP Calculator 快速上线 AI 项目的故事。",
-    "items": [
-      {
-        "name": "David Chen",
-        "role": "AIWallpaper.shop 创始人",
-        "quote": "PPP Calculator 为我们节省了数月开发时间。2 天上线 AI 壁纸业务，一周内就收到了第一笔付费订单！",
-        "image": {
-          "src": "/imgs/avatars/1.png",
-          "alt": "david"
-        }
-      },
-      {
-        "name": "Rachel Kim",
-        "role": "HeyBeauty.ai CTO",
-        "quote": "内置 AI 基础设施颠覆了开发体验，无需担心架构，只需专注核心功能，极快落地。",
-        "image": {
-          "src": "/imgs/avatars/2.png",
-          "alt": "rachel"
-        }
-      },
-      {
-        "name": "Marcus Thompson",
-        "role": "独立开发者",
-        "quote": "作为独立开发者，PPP Calculator 满足了全部需求——认证、支付、AI 集成、美观界面，一个周末上线 SaaS！",
-        "image": {
-          "src": "/imgs/avatars/3.png",
-          "alt": "marcus"
-        }
-      },
-      {
-        "name": "Sofia Garcia",
-        "role": "Melodisco CEO",
-        "quote": "模板高度可定制且生产级。我们几小时内搭建出了 AI 音乐平台，上市周期大大缩短！",
-        "image": {
-          "src": "/imgs/avatars/4.png",
-          "alt": "sofia"
-        }
-      },
-      {
-        "name": "James Wilson",
-        "role": "GPTs.works 技术负责人",
-        "quote": "PPP Calculator 基础设施极其稳定。我们从 0 到 1 万用户，无需关心后端维护，是最棒的 AI 投资。",
-        "image": {
-          "src": "/imgs/avatars/5.png",
-          "alt": "james"
-        }
-      },
-      {
-        "name": "Anna Zhang",
-        "role": "创业者",
-        "quote": "从想法到上线，仅用 3 天！PPP Calculator 模板和部署工具让我们极快验证 AI 商业创意。",
-        "image": {
-          "src": "/imgs/avatars/6.png",
-          "alt": "anna"
-        }
-      }
-    ]
-  },
-  "faq": {
-    "id": "faq",
-    "title": "关于 PPP Calculator 的常见问题",
-    "description": "还有其他问题？欢迎加入 Discord 或发邮件联系我们。",
-    "tip": "没有找到想要的答案？请联系 <a href='https://discord.gg/HQNnrzjZQS' target='_blank' class='text-primary font-medium hover:underline'>我们的客服团队</a>",
-    "items": [
-      {
-        "question": "PPP Calculator 是什么？怎么帮到我？",
-        "answer": "PPP Calculator 是专为 AI SaaS 设计的 NextJS 全套脚手架，内含开箱即用的模板、基础设施搭建和部署工具，让你数小时内上线 AI 产品。"
-      },
-      {
-        "question": "使用 PPP Calculator 需要很高的技术水平吗？",
-        "answer": "有基础编程知识即可上手。PPP Calculator 面向开发者友好，详细文档和模板让初学者也能轻松起步，不需深厚 AI 或云计算背景。"
-      },
-      {
-        "question": "PPP Calculator 支持哪些类型的 AI SaaS 项目？",
-        "answer": "PPP Calculator 支持内容生成、数据分析、AI 聊天机器人、图片/内容生成器等多种主流 AI 应用场景。"
-      },
-      {
-        "question": "用 PPP Calculator 一般多久能上线？",
-        "answer": "借助 PPP Calculator，可在数小时内拿到产品原型并上线生产环境，预配置的一键部署大幅缩短开发周期。"
-      },
-      {
-        "question": "PPP Calculator 的基础设施包括哪些内容？",
-        "answer": "包含认证、数据库、API 集成、支付、云端部署等全栈解决方案，全部遵循业界最佳实践预配置。"
-      },
-      {
-        "question": "模板是否支持定制自己的品牌？",
-        "answer": "当然支持！所有模板均可自定义设计、功能和品牌，既保持基础架构稳定，又能满足个性扩展需求。"
-      }
-    ]
-  },
   "cta": {
     "id": "cta",
     "title": "发布你的第一个 AI SaaS 项目",
@@ -468,27 +375,9 @@
     "social": {
       "items": [
         {
-          "title": "X",
-          "icon": "RiTwitterXFill",
-          "url": "https://x.com/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "Github",
-          "url": "https://github.com/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/your-app-name",
-          "target": "_blank"
-        },
-        {
           "title": "邮箱",
           "icon": "Mail",
-          "url": "mailto:support@your-domain.com",
+          "url": "mailto:pppcalculator@pppcalculator.world",
           "target": "_self"
         }
       ]
