@@ -17,48 +17,9 @@
           "icon": "Sparkles"
         },
         {
-          "title": "案例展示",
-          "url": "/showcases",
-          "icon": "Box"
-        },
-        {
           "title": "价格",
           "url": "/pricing",
           "icon": "DollarSign"
-        },
-        {
-          "title": "AI",
-          "icon": "RiRobot2Line",
-          "children": [
-            {
-              "title": "AI 图片生成器",
-              "description": "使用 AI 生成图片",
-              "url": "/ai-image-generator",
-              "icon": "RiImage2Line"
-            },
-            {
-              "title": "AI 音乐生成器",
-              "description": "使用 AI 生成美妙的音乐",
-              "url": "/ai-music-generator",
-              "icon": "RiMusic2Line"
-            },
-            {
-              "title": "AI 聊天机器人",
-              "description": "与 AI 聊天机器人对话",
-              "url": "/chat",
-              "icon": "RiMessage2Line"
-            }
-          ]
-        },
-        {
-          "title": "博客",
-          "url": "/blog",
-          "icon": "Newspaper"
-        },
-        {
-          "title": "文档",
-          "url": "/docs",
-          "icon": "BookOpenText"
         }
       ]
     },
@@ -478,7 +439,7 @@
     "id": "footer",
     "brand": {
       "title": "PPP Calculator",
-      "description": "PPP Calculator 是专为 AI SaaS 项目打造的 NextJS 模板。丰富模板与组件，极速交付你的产品。",
+      "description": "PPP Calculator 是专为 用户提供通过AI赋能的购买力平价信息服务的Sass平台",
       "logo": {
         "src": "/logo.png",
         "alt": "PPP Calculator"
@@ -496,54 +457,9 @@
               "target": "_self"
             },
             {
-              "title": "案例展示",
-              "url": "/showcases",
-              "target": "_self"
-            },
-            {
               "title": "价格",
               "url": "/pricing",
               "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "资源",
-          "children": [
-            {
-              "title": "文档",
-              "url": "/docs",
-              "target": "_self"
-            },
-            {
-              "title": "博客",
-              "url": "/blog",
-              "target": "_self"
-            },
-            {
-              "title": "对话",
-              "url": "/chat",
-              "target": "_blank"
-            }
-          ]
-        },
-        {
-          "title": "合作伙伴",
-          "children": [
-            {
-              "title": "PPP Calculator",
-              "url": "https://pppcalculator.world",
-              "target": "_blank"
-            },
-            {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "MCP.so",
-              "url": "https://mcp.so",
-              "target": "_blank"
             }
           ]
         }

@@ -17,48 +17,9 @@
           "icon": "Sparkles"
         },
         {
-          "title": "Showcases",
-          "url": "/showcases",
-          "icon": "Box"
-        },
-        {
           "title": "Pricing",
           "url": "/pricing",
           "icon": "DollarSign"
-        },
-        {
-          "title": "AI",
-          "icon": "RiRobot2Line",
-          "children": [
-            {
-              "title": "AI Image Generator",
-              "description": "Use AI to generate images",
-              "url": "/ai-image-generator",
-              "icon": "RiImage2Line"
-            },
-            {
-              "title": "AI Music Generator",
-              "description": "Use AI to generate music",
-              "url": "/ai-music-generator",
-              "icon": "RiMusic2Line"
-            },
-            {
-              "title": "AI Chatbot",
-              "description": "Chat with AI chatbot",
-              "url": "/chat",
-              "icon": "RiMessage2Line"
-            }
-          ]
-        },
-        {
-          "title": "Blog",
-          "url": "/blog",
-          "icon": "Newspaper"
-        },
-        {
-          "title": "Docs",
-          "url": "/docs",
-          "icon": "BookOpenText"
         }
       ]
     },
@@ -478,7 +439,7 @@
     "id": "footer",
     "brand": {
       "title": "PPP Calculator",
-      "description": "PPP Calculator is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
+      "description": "PPP Calculator is a SaaS platform that provides AI-powered Purchasing Power Parity information services for users.",
       "logo": {
         "src": "/logo.png",
         "alt": "PPP Calculator"
@@ -496,54 +457,9 @@
               "target": "_self"
             },
             {
-              "title": "Showcases",
-              "url": "/showcases",
-              "target": "_self"
-            },
-            {
               "title": "Pricing",
               "url": "/pricing",
               "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Resources",
-          "children": [
-            {
-              "title": "Documents",
-              "url": "/docs",
-              "target": "_self"
-            },
-            {
-              "title": "Blog",
-              "url": "/blog",
-              "target": "_self"
-            },
-            {
-              "title": "Chat",
-              "url": "/chat",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Friends",
-          "children": [
-            {
-              "title": "PPP Calculator",
-              "url": "https://pppcalculator.world",
-              "target": "_blank"
-            },
-            {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "MCP.so",
-              "url": "https://mcp.so",
-              "target": "_blank"
             }
           ]
         }
