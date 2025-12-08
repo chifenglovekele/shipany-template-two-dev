@@ -1,8 +1,14 @@
 'use client';
 
 import { CheckCircle2, ShoppingCart } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/shared/components/ui/card';
 
 interface ConversionResultProps {
   result: {
@@ -15,13 +21,15 @@ interface ConversionResultProps {
 }
 
 export function ConversionResult({ result, isLoading }: ConversionResultProps) {
+  const t = useTranslations('landing.converter');
+
   if (isLoading) {
     return (
       <Card className="h-full border-0 bg-white/95 shadow-2xl backdrop-blur-xl">
         <CardContent className="flex min-h-[300px] items-center justify-center p-6 md:p-8">
           <div className="space-y-4 text-center">
             <div className="mx-auto h-16 w-16 animate-spin rounded-full border-4 border-[#25D366] border-t-transparent" />
-            <p className="text-muted-foreground">AI 正在分析购买力...</p>
+            <p className="text-muted-foreground">{t('loading_text')}</p>
           </div>
         </CardContent>
       </Card>
@@ -36,9 +44,7 @@ export function ConversionResult({ result, isLoading }: ConversionResultProps) {
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#075E54] to-[#25D366]">
               <ShoppingCart className="h-10 w-10 text-white" />
             </div>
-            <p className="text-muted-foreground text-lg">
-              输入金额并选择国家开始换算
-            </p>
+            <p className="text-muted-foreground text-lg">{t('empty_text')}</p>
           </div>
         </CardContent>
       </Card>
@@ -50,14 +56,14 @@ export function ConversionResult({ result, isLoading }: ConversionResultProps) {
       <CardHeader className="pb-4">
         <CardTitle className="flex items-center gap-2 text-2xl font-bold">
           <CheckCircle2 className="h-6 w-6 text-[#25D366]" />
-          换算结果
+          {t('result_title')}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6 p-6 pt-0 md:p-8">
         {/* Main Result */}
         <div className="rounded-2xl bg-gradient-to-br from-[#075E54] to-[#128C7E] p-6 text-white shadow-lg">
           <p className="mb-2 text-sm opacity-80">
-            在 {result.country} 的购买力相当于
+            {t('result_prefix', { country: result.country })}
           </p>
           <div className="flex items-baseline gap-2">
             <span className="text-4xl font-bold tracking-tight md:text-5xl">
@@ -73,13 +79,13 @@ export function ConversionResult({ result, isLoading }: ConversionResultProps) {
         {result.comparisons && result.comparisons.length > 0 && (
           <div className="space-y-3">
             <h3 className="text-foreground text-lg font-semibold">
-              购买力对比示例
+              {t('comparison_title')}
             </h3>
             <div className="space-y-2">
               {result.comparisons.map((comparison, index) => (
                 <div
                   key={index}
-                  className="animate-slide-in border-border rounded-xl border bg-muted/50 p-4 transition-all hover:border-[#25D366]"
+                  className="animate-slide-in border-border bg-muted/50 rounded-xl border p-4 transition-all hover:border-[#25D366]"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <p className="text-foreground text-sm leading-relaxed">
@@ -94,4 +100,3 @@ export function ConversionResult({ result, isLoading }: ConversionResultProps) {
     </Card>
   );
 }
-

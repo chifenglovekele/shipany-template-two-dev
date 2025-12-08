@@ -507,5 +507,46 @@
     },
     "show_theme": true,
     "show_locale": true
+  },
+  "converter": {
+    "title": "购买力平价换算器",
+    "description": "了解你的美元在不同国家的真实购买力",
+    "footer_tip": "数据由 AI 智能分析提供，仅供参考",
+    "amount_label": "美元金额 (USD)",
+    "amount_placeholder": "100",
+    "country_label": "目标国家",
+    "country_placeholder": "选择国家",
+    "button_convert": "开始换算",
+    "button_loading": "计算中...",
+    "loading_text": "AI 正在分析购买力...",
+    "empty_text": "输入金额并选择国家开始换算",
+    "result_title": "换算结果",
+    "result_prefix": "在 {country} 的购买力相当于",
+    "comparison_title": "购买力对比示例",
+    "countries": {
+      "china": "中国 (CNY)",
+      "japan": "日本 (JPY)",
+      "uk": "英国 (GBP)",
+      "australia": "澳大利亚 (AUD)",
+      "canada": "加拿大 (CAD)",
+      "singapore": "新加坡 (SGD)",
+      "korea": "韩国 (KRW)",
+      "india": "印度 (INR)",
+      "thailand": "泰国 (THB)",
+      "vietnam": "越南 (VND)"
+    },
+    "country_names": {
+      "china": "中国",
+      "japan": "日本",
+      "uk": "英国",
+      "australia": "澳大利亚",
+      "canada": "加拿大",
+      "singapore": "新加坡",
+      "korea": "韩国",
+      "india": "印度",
+      "thailand": "泰国",
+      "vietnam": "越南"
+    },
+    "prompt": "作为一个购买力平价(PPP)专家，请将{amount}美元换算成{country}的本地货币。\n\n重要：这是购买力平价换算，不是汇率换算。请基于真实的物价水平和生活成本来计算等价购买力。\n\n例如：100美元在美国的购买力，可能相当于在中国300元人民币的购买力（而不是按汇率720元）。\n\n请提供：\n1. 基于购买力平价的等价金额（不是汇率换算）\n2. 货币代码（例如：CNY, JPY等）\n3. 5个具体的购买力对比示例，展示相同商品在两国的实际价格对比\n\n请以JSON格式返回：\n{\n  \"amount\": \"换算后的金额（纯数字）\",\n  \"currency\": \"货币代码\",\n  \"comparisons\": [\"示例1\", \"示例2\", \"示例3\", \"示例4\", \"示例5\"]\n}\n\n注意：只返回JSON，不要任何其他文字"
   }
 }

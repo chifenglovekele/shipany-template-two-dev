@@ -507,5 +507,46 @@
     },
     "show_theme": true,
     "show_locale": true
+  },
+  "converter": {
+    "title": "Purchasing Power Parity Calculator",
+    "description": "Discover the real purchasing power of your dollars in different countries",
+    "footer_tip": "Data provided by AI analysis, for reference only",
+    "amount_label": "USD Amount",
+    "amount_placeholder": "100",
+    "country_label": "Target Country",
+    "country_placeholder": "Select a country",
+    "button_convert": "Convert",
+    "button_loading": "Calculating...",
+    "loading_text": "AI is analyzing purchasing power...",
+    "empty_text": "Enter an amount and select a country to start",
+    "result_title": "Conversion Result",
+    "result_prefix": "Purchasing power in {country} equals",
+    "comparison_title": "Purchasing Power Comparison Examples",
+    "countries": {
+      "china": "China (CNY)",
+      "japan": "Japan (JPY)",
+      "uk": "United Kingdom (GBP)",
+      "australia": "Australia (AUD)",
+      "canada": "Canada (CAD)",
+      "singapore": "Singapore (SGD)",
+      "korea": "South Korea (KRW)",
+      "india": "India (INR)",
+      "thailand": "Thailand (THB)",
+      "vietnam": "Vietnam (VND)"
+    },
+    "country_names": {
+      "china": "China",
+      "japan": "Japan",
+      "uk": "United Kingdom",
+      "australia": "Australia",
+      "canada": "Canada",
+      "singapore": "Singapore",
+      "korea": "South Korea",
+      "india": "India",
+      "thailand": "Thailand",
+      "vietnam": "Vietnam"
+    },
+    "prompt": "As a Purchasing Power Parity (PPP) expert, please convert {amount} USD to the local currency of {country}.\n\nImportant: This is a PPP conversion, NOT an exchange rate conversion. Please calculate equivalent purchasing power based on real price levels and cost of living.\n\nFor example: The purchasing power of $100 in the US might be equivalent to 300 CNY in China (not the exchange rate of 720 CNY).\n\nPlease provide:\n1. The equivalent amount based on purchasing power parity (not exchange rate)\n2. Currency code (e.g., CNY, JPY, etc.)\n3. 5 specific purchasing power comparison examples showing actual price differences for the same products in both countries\n\nPlease return in JSON format:\n{\n  \"amount\": \"converted amount (number only)\",\n  \"currency\": \"currency code\",\n  \"comparisons\": [\"example1\", \"example2\", \"example3\", \"example4\", \"example5\"]\n}\n\nNote: Return only the JSON, no other text"
   }
 }

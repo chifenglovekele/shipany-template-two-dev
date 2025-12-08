@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowRightLeft, Loader2 } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/components/ui/button';
 import { Card, CardContent } from '@/shared/components/ui/card';
@@ -15,18 +16,18 @@ import {
   SelectValue,
 } from '@/shared/components/ui/select';
 
-const countries = [
-  { value: 'china', label: '中国 (CNY)' },
-  { value: 'japan', label: '日本 (JPY)' },
-  { value: 'uk', label: '英国 (GBP)' },
-  { value: 'australia', label: '澳大利亚 (AUD)' },
-  { value: 'canada', label: '加拿大 (CAD)' },
-  { value: 'singapore', label: '新加坡 (SGD)' },
-  { value: 'korea', label: '韩国 (KRW)' },
-  { value: 'india', label: '印度 (INR)' },
-  { value: 'thailand', label: '泰国 (THB)' },
-  { value: 'vietnam', label: '越南 (VND)' },
-];
+const countryKeys = [
+  'china',
+  'japan',
+  'uk',
+  'australia',
+  'canada',
+  'singapore',
+  'korea',
+  'india',
+  'thailand',
+  'vietnam',
+] as const;
 
 interface CurrencyConverterProps {
   onResult: (result: {
@@ -46,6 +47,8 @@ export function CurrencyConverter({
 }: CurrencyConverterProps) {
   const [amount, setAmount] = useState('');
   const [country, setCountry] = useState('');
+  const t = useTranslations('landing.converter');
+  const locale = useLocale();
 
   const handleConvert = async () => {
     if (!amount || !country) return;
@@ -57,7 +60,7 @@ export function CurrencyConverter({
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ amount, country }),
+        body: JSON.stringify({ amount, country, locale }),
       });
 
       const data = await response.json();
@@ -70,7 +73,7 @@ export function CurrencyConverter({
   };
 
   return (
-    <Card className="border-0 bg-white/95 shadow-2xl backdrop-blur-xl overflow-hidden">
+    <Card className="overflow-hidden border-0 bg-white/95 shadow-2xl backdrop-blur-xl">
       <CardContent className="p-6 md:p-8">
         <div className="space-y-6">
           <div className="space-y-2">
@@ -78,16 +81,16 @@ export function CurrencyConverter({
               htmlFor="amount"
               className="text-foreground text-sm font-medium"
             >
-              美元金额 (USD)
+              {t('amount_label')}
             </Label>
             <div className="relative">
-              <span className="text-muted-foreground pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 font-medium">
+              <span className="text-muted-foreground pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 font-medium">
                 $
               </span>
               <Input
                 id="amount"
                 type="number"
-                placeholder="100"
+                placeholder={t('amount_placeholder')}
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 className="h-14 border-2 pl-8 text-lg transition-all focus:border-[#25D366]"
@@ -100,19 +103,19 @@ export function CurrencyConverter({
               htmlFor="country"
               className="text-foreground text-sm font-medium"
             >
-              目标国家
+              {t('country_label')}
             </Label>
             <Select value={country} onValueChange={setCountry}>
               <SelectTrigger
                 id="country"
                 className="h-14 border-2 text-lg transition-all focus:border-[#25D366]"
               >
-                <SelectValue placeholder="选择国家" />
+                <SelectValue placeholder={t('country_placeholder')} />
               </SelectTrigger>
               <SelectContent>
-                {countries.map((c) => (
-                  <SelectItem key={c.value} value={c.value}>
-                    {c.label}
+                {countryKeys.map((key) => (
+                  <SelectItem key={key} value={key}>
+                    {t(`countries.${key}`)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -127,12 +130,12 @@ export function CurrencyConverter({
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                计算中...
+                {t('button_loading')}
               </>
             ) : (
               <>
                 <ArrowRightLeft className="mr-2 h-5 w-5" />
-                开始换算
+                {t('button_convert')}
               </>
             )}
           </Button>
@@ -141,4 +144,3 @@ export function CurrencyConverter({
     </Card>
   );
 }
-

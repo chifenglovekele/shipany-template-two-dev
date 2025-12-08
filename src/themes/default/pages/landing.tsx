@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Globe } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import { Landing } from '@/shared/types/blocks/landing';
 import {
@@ -24,6 +25,7 @@ export default function LandingPage({
     comparisons: string[];
   } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations('landing.converter');
 
   return (
     <>
@@ -38,10 +40,10 @@ export default function LandingPage({
               </div>
             </div>
             <h1 className="mb-3 text-4xl font-bold tracking-tight text-balance text-white md:text-5xl lg:text-6xl">
-              购买力平价换算器
+              {t('title')}
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-pretty text-white/80 md:text-xl">
-              了解你的美元在不同国家的真实购买力
+              {t('description')}
             </p>
           </div>
 
@@ -70,9 +72,7 @@ export default function LandingPage({
             className="animate-fade-in mt-12 text-center"
             style={{ animationDelay: '200ms' }}
           >
-            <p className="text-sm text-white/60">
-              数据由 AI 智能分析提供，仅供参考
-            </p>
+            <p className="text-sm text-white/60">{t('footer_tip')}</p>
           </div>
         </div>
       </main>
