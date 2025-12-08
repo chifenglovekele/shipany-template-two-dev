@@ -405,7 +405,7 @@
     "amount_placeholder": "100",
     "country_label": "Target Country",
     "country_placeholder": "Select a country",
-    "button_convert": "Convert",
+    "button_convert": "Convert (10 credits per conversion)",
     "button_loading": "Calculating...",
     "loading_text": "AI is analyzing purchasing power...",
     "empty_text": "Enter an amount and select a country to start",

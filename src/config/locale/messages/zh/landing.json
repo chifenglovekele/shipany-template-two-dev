@@ -405,7 +405,7 @@
     "amount_placeholder": "100",
     "country_label": "目标国家",
     "country_placeholder": "选择国家",
-    "button_convert": "开始换算",
+    "button_convert": "开始换算（每次换算，扣除10积分）",
     "button_loading": "计算中...",
     "loading_text": "AI 正在分析购买力...",
     "empty_text": "输入金额并选择国家开始换算",

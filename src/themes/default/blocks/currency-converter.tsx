@@ -64,9 +64,25 @@ export function CurrencyConverter({
       });
 
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(
+          data.error ||
+            (locale === 'zh'
+              ? '换算失败，请检查积分或稍后重试'
+              : 'Conversion failed, please check credits or try again')
+        );
+      }
+
       onResult(data);
     } catch (error) {
       console.error('[PPP] Conversion error:', error);
+      const message =
+        error instanceof Error
+          ? error.message
+          : locale === 'zh'
+            ? '换算失败，请稍后重试'
+            : 'Conversion failed, please try again';
+      alert(message);
     } finally {
       setIsLoading(false);
     }
