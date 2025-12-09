@@ -37,7 +37,8 @@ export function SignUser({
   userNav?: UserNav;
 }) {
   const t = useTranslations('common.sign');
-  const { isCheckSign, user, setIsShowSignModal } = useAppContext();
+  const { isCheckSign, user, setIsShowSignModal, refreshSession } =
+    useAppContext();
   const router = useRouter();
 
   const [mounted, setMounted] = useState(false);
@@ -136,7 +137,8 @@ export function SignUser({
                 onClick={() =>
                   signOut({
                     fetchOptions: {
-                      onSuccess: () => {
+                      onSuccess: async () => {
+                        await refreshSession();
                         router.push('/');
                       },
                     },

@@ -38,7 +38,7 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
   const t = useTranslations('common.sign');
   // Use user and isCheckSign from AppContext instead of calling useSession again
   // This avoids duplicate session requests
-  const { user: sessionUser, isCheckSign } = useAppContext();
+  const { user: sessionUser, isCheckSign, refreshSession } = useAppContext();
   const { isMobile, open } = useSidebar();
   const router = useRouter();
 
@@ -51,8 +51,14 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
   }, []);
 
   const handleSignOut = async () => {
-    await signOut();
-    router.push(user.signout_callback || '/sign-in');
+    await signOut({
+      fetchOptions: {
+        onSuccess: async () => {
+          await refreshSession(); // ensure context reflects signed-out state
+          router.push(user.signout_callback || '/sign-in');
+        },
+      },
+    });
   };
 
   // If not mounted, render placeholder to avoid hydration mismatch

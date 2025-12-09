@@ -3,6 +3,7 @@
 import {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -23,6 +24,7 @@ export interface ContextValue {
   configs: Record<string, string>;
   fetchUserCredits: () => Promise<void>;
   fetchUserInfo: () => Promise<void>;
+  refreshSession: () => Promise<void>;
 }
 
 const AppContext = createContext({} as ContextValue);
@@ -40,43 +42,36 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [session, setSession] = useState<any>(null);
   const [isPending, setIsPending] = useState(true);
 
+  const refreshSession = useCallback(async () => {
+    try {
+      setIsPending(true);
+      const resp = await fetch('/api/auth/get-session', {
+        credentials: 'include',
+        cache: 'no-store', // avoid cached session after sign-out
+      });
+      const next = resp.ok ? await resp.json() : null;
+      setSession(next);
+    } catch (e) {
+      setSession(null);
+    } finally {
+      setIsPending(false);
+    }
+  }, []);
+
   useEffect(() => {
-    let cancelled = false;
     let timer: ReturnType<typeof setInterval> | null = null;
 
-    const loadSession = async () => {
-      try {
-        setIsPending(true);
-        const resp = await fetch('/api/auth/get-session', {
-          credentials: 'include',
-        });
-        const next = resp.ok ? await resp.json() : null;
-        if (!cancelled) {
-          setSession(next);
-        }
-      } catch (e) {
-        if (!cancelled) {
-          setSession(null);
-        }
-      } finally {
-        if (!cancelled) {
-          setIsPending(false);
-        }
-      }
-    };
-
     // fetch once immediately
-    loadSession();
+    refreshSession();
     // optionally refresh every 5 minutes to keep session fresh
-    timer = setInterval(loadSession, 5 * 60 * 1000);
+    timer = setInterval(refreshSession, 5 * 60 * 1000);
 
     return () => {
-      cancelled = true;
       if (timer) {
         clearInterval(timer);
       }
     };
-  }, []);
+  }, [refreshSession]);
 
   // is check sign (true during SSR and initial render to avoid hydration mismatch when auth is enabled)
   const [isCheckSign, setIsCheckSign] = useState(!!envConfigs.auth_secret);
@@ -223,6 +218,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         configs,
         fetchUserCredits,
         fetchUserInfo,
+        refreshSession,
       }}
     >
       {children}
