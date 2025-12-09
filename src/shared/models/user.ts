@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { headers } from 'next/headers';
 import { count, desc, eq, inArray } from 'drizzle-orm';
 
@@ -87,12 +88,15 @@ export async function getUserCredits(userId: string) {
   return { remainingCredits };
 }
 
-export async function getSignUser() {
+const getSessionOnce = cache(async () => {
   const auth = await getAuth();
-  const session = await auth.api.getSession({
+  return auth.api.getSession({
     headers: await headers(),
   });
+});
 
+export async function getSignUser() {
+  const session = await getSessionOnce();
   return session?.user;
 }
 
