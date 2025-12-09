@@ -7,6 +7,11 @@ import { envConfigs } from '@/config';
 export const authClient = createAuthClient({
   baseURL: envConfigs.auth_url,
   secret: envConfigs.auth_secret,
+  session: {
+    autoRefresh: process.env.NODE_ENV === 'production', // 生产环境启用
+    refreshInterval: process.env.NODE_ENV === 'production' ? 300 : 0, // 生产5分钟，开发禁用
+    heartbeat: false,
+  },
 });
 
 // export auth client methods
@@ -17,6 +22,11 @@ export function getAuthClient(configs: Record<string, string>) {
   const authClient = createAuthClient({
     baseURL: envConfigs.auth_url,
     secret: envConfigs.auth_secret,
+    session: {
+      autoRefresh: process.env.NODE_ENV === 'production', // 生产环境启用
+      refreshInterval: process.env.NODE_ENV === 'production' ? 300 : 0, // 生产5分钟，开发禁用
+      heartbeat: false,
+    },
     plugins:
       configs.google_client_id && configs.google_one_tap_enabled === 'true'
         ? [

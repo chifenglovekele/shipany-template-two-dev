@@ -150,17 +150,17 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionUserId]);
 
-  useEffect(() => {
-    if (
-      configs &&
-      configs.google_client_id &&
-      configs.google_one_tap_enabled === 'true' &&
-      !session &&
-      !isPending
-    ) {
-      showOneTap(configs);
-    }
-  }, [configs, session, isPending]);
+  // useEffect(() => {
+  //   if (
+  //     configs &&
+  //     configs.google_client_id &&
+  //     configs.google_one_tap_enabled === 'true' &&
+  //     !session &&
+  //     !isPending
+  //   ) {
+  //     showOneTap(configs);
+  //   }
+  // }, [configs, session, isPending]);
 
   useEffect(() => {
     if (user && !user.credits) {
