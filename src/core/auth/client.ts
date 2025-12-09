@@ -8,8 +8,8 @@ export const authClient = createAuthClient({
   baseURL: envConfigs.auth_url,
   secret: envConfigs.auth_secret,
   session: {
-    autoRefresh: process.env.NODE_ENV === 'production', // 生产环境启用
-    refreshInterval: process.env.NODE_ENV === 'production' ? 300 : 0, // 生产5分钟，开发禁用
+    autoRefresh: false, // 生产环境启用
+    refreshInterval: 0, // 生产5分钟，开发禁用
     heartbeat: false,
   },
 });
@@ -23,8 +23,8 @@ export function getAuthClient(configs: Record<string, string>) {
     baseURL: envConfigs.auth_url,
     secret: envConfigs.auth_secret,
     session: {
-      autoRefresh: process.env.NODE_ENV === 'production', // 生产环境启用
-      refreshInterval: process.env.NODE_ENV === 'production' ? 300 : 0, // 生产5分钟，开发禁用
+      autoRefresh: false, // 生产环境启用
+      refreshInterval: 0, // 生产5分钟，开发禁用
       heartbeat: false,
     },
     plugins:

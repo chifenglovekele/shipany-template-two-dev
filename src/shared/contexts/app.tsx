@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { getAuthClient, useSession } from '@/core/auth/client';
+import { authClient, getAuthClient } from '@/core/auth/client';
 import { useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { User } from '@/shared/models/user';
@@ -36,8 +36,47 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   // sign user
   const [user, setUser] = useState<User | null>(null);
 
-  // session
-  const { data: session, isPending } = useSession();
+  // session (manual fetch instead of useSession to avoid frequent re-renders)
+  const [session, setSession] = useState<any>(null);
+  const [isPending, setIsPending] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    const loadSession = async () => {
+      try {
+        setIsPending(true);
+        const resp = await fetch('/api/auth/get-session', {
+          credentials: 'include',
+        });
+        const next = resp.ok ? await resp.json() : null;
+        if (!cancelled) {
+          setSession(next);
+        }
+      } catch (e) {
+        if (!cancelled) {
+          setSession(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setIsPending(false);
+        }
+      }
+    };
+
+    // fetch once immediately
+    loadSession();
+    // optionally refresh every 5 minutes to keep session fresh
+    timer = setInterval(loadSession, 5 * 60 * 1000);
+
+    return () => {
+      cancelled = true;
+      if (timer) {
+        clearInterval(timer);
+      }
+    };
+  }, []);
 
   // is check sign (true during SSR and initial render to avoid hydration mismatch when auth is enabled)
   const [isCheckSign, setIsCheckSign] = useState(!!envConfigs.auth_secret);
